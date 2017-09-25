@@ -9,16 +9,16 @@ class Hello extends React.Component {
     this.state = { clicked: false }; // initial state
   }
 
-  handleClick(event) {
+  handleClick() {
     // callback exécuté suite au clic
-    console.log(event);
+    this.setState({ clicked: true });
   }
 
   render() {
     return (
       <h1
         className={this.state.clicked ? 'clicked' : ''}
-        onClick={this.handleClick}
+        onClick={this.handleClick.bind(this)}
       >
         Hello {this.props.name}
       </h1>
