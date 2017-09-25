@@ -9,9 +9,19 @@ class Hello extends React.Component {
     this.state = { clicked: false }; // initial state
   }
 
+  handleClick(event) {
+    // callback exécuté suite au clic
+    console.log(event);
+  }
+
   render() {
     return (
-      <h1 className={this.state.clicked ? 'clicked' : ''}>Hello {this.props.name}</h1>
+      <h1
+        className={this.state.clicked ? 'clicked' : ''}
+        onClick={this.handleClick}
+      >
+        Hello {this.props.name}
+      </h1>
     );
   }
 }
