@@ -7,12 +7,11 @@ class Hello extends React.Component {
     super(props);
 
     this.state = { clicked: false }; // initial state
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick = () => {
     // callback exécuté suite au clic
-    this.setState({ clicked: true });
+    this.setState({ clicked: !this.state.clicked });
   }
 
   render() {
