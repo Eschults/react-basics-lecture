@@ -7,6 +7,7 @@ class Hello extends React.Component {
     super(props);
 
     this.state = { clicked: false }; // initial state
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
@@ -18,7 +19,7 @@ class Hello extends React.Component {
     return (
       <h1
         className={this.state.clicked ? 'clicked' : ''}
-        onClick={this.handleClick.bind(this)}
+        onClick={this.handleClick}
       >
         Hello {this.props.name}
       </h1>
